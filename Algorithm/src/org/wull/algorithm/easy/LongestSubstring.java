@@ -35,28 +35,5 @@ public class LongestSubstring {
 		}
 		return max;
 	}
-	
-	public static int lengthOfLongestSubstring2(String s) {
-		//abcda  abcd
-		Set<Character> hs = new HashSet<Character>();
-		int size=0;
-		int max = 0;
-		if(s==null){
-			return 0;
-		}
-		for(int i=0;i<s.length();i++){
-			Character ch = s.charAt(i);
-			if(hs.contains(ch)){
-				if(size>max) {
-					max=size;
-				}
-				size=0;
-				hs.clear();
-			}
-			size++;
-			hs.add(ch);
-		}
-		return max;
-	}
 
 }
